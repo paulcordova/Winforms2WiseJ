@@ -108,7 +108,7 @@ namespace Windows2Wisej
         {
             PropertyGridTest validationPropGrid = new PropertyGridTest();
             validationPropGrid.StartPosition = FormStartPosition.CenterParent;
-            validationPropGrid.Show();
+            validationPropGrid.ShowDialog();
         }
     }
 }

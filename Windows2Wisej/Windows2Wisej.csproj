@@ -66,6 +66,18 @@
     <Compile Include="ComboBoxTest2.Designer.cs">
       <DependentUpon>ComboBoxTest2.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\ucCustomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ucCustomControl.Designer.cs">
+      <DependentUpon>ucCustomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ucMasterDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ucMasterDetail.Designer.cs">
+      <DependentUpon>ucMasterDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataGridView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,18 @@
     </Compile>
     <Compile Include="GroupBox.Designer.cs">
       <DependentUpon>GroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inherited\frminForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inherited\frminForm1.Designer.cs">
+      <DependentUpon>frminForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inherited\ucinUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="inherited\ucinUserControl1.Designer.cs">
+      <DependentUpon>ucinUserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="ListBoxTest.cs">
       <SubType>Form</SubType>
@@ -114,6 +138,18 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenubarTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenubarTest.Designer.cs">
+      <DependentUpon>MenubarTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp.Designer.cs">
+      <DependentUpon>PopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyGridTest.cs">
@@ -130,6 +166,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ComboBoxTest2.resx">
       <DependentUpon>ComboBoxTest2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ucCustomControl.resx">
+      <DependentUpon>ucCustomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ucMasterDetail.resx">
+      <DependentUpon>ucMasterDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataGridView.resx">
       <DependentUpon>DataGridView.cs</DependentUpon>
@@ -154,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenubarTest.resx">
+      <DependentUpon>MenubarTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp.resx">
+      <DependentUpon>PopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -183,6 +231,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Images\paper.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\scissors.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\stone.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="lv_images\32x32\abiword_48.png" />
     <Content Include="lv_images\32x32\bmp.png" />
     <Content Include="lv_images\32x32\disks.png" />

@@ -39,6 +39,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.btnPopUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button17
@@ -151,11 +152,21 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // btnPopUp
+            // 
+            this.btnPopUp.Location = new System.Drawing.Point(350, 339);
+            this.btnPopUp.Name = "btnPopUp";
+            this.btnPopUp.Size = new System.Drawing.Size(159, 42);
+            this.btnPopUp.TabIndex = 11;
+            this.btnPopUp.Text = "PopUp";
+            this.btnPopUp.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 534);
+            this.Controls.Add(this.btnPopUp);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -168,6 +179,7 @@
             this.Controls.Add(this.ListBox);
             this.Controls.Add(this.button17);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.ResumeLayout(false);
 
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnPopUp;
     }
 }
