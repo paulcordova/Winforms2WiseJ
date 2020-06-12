@@ -23,7 +23,7 @@ namespace Windows2Wisej
         private void btnTest1_Click(object sender, EventArgs e)
         {
             PropertyGridSimpleDemoClass gcd = new PropertyGridSimpleDemoClass();
-            prpG.SelectedObject = null;
+            //prpG.SelectedObject = null;
             prpG.SelectedObject = gcd;
             lblTest.Text = "Test 1";
         }
@@ -31,7 +31,7 @@ namespace Windows2Wisej
         private void btnTest2_Click(object sender, EventArgs e)
         {
             PropertyGridSimpleDemoClass2 gcd2 = new PropertyGridSimpleDemoClass2();
-            prpG.SelectedObject = null;
+            //prpG.SelectedObject = null;
             prpG.SelectedObject = gcd2;
             lblTest.Text = "Test 2";
         }
@@ -39,7 +39,7 @@ namespace Windows2Wisej
         private void btnTest3_Click(object sender, EventArgs e)
         {
             PropertyGridSimpleDemoClass3 gcd3 = new PropertyGridSimpleDemoClass3();
-            prpG.SelectedObject = null;
+            //prpG.SelectedObject = null;
             prpG.SelectedObject = gcd3;
             lblTest.Text = "Test 3";
         }
@@ -47,7 +47,7 @@ namespace Windows2Wisej
         private void btnTest4_Click(object sender, EventArgs e)
         {
             DrinkerDoses gcd4 = new DrinkerDoses();
-            prpG.SelectedObject = null;
+            //prpG.SelectedObject = null;
             prpG.SelectedObject = gcd4;
             lblTest.Text = "Test 4";
         }
