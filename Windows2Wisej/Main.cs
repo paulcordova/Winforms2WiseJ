@@ -110,5 +110,19 @@ namespace Windows2Wisej
             validationPropGrid.StartPosition = FormStartPosition.CenterParent;
             validationPropGrid.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TreeViewTest validationTreeView = new TreeViewTest();
+            validationTreeView.StartPosition = FormStartPosition.CenterParent;
+            validationTreeView.ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmContacts frm = new frmContacts();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+        }
     }
 }
