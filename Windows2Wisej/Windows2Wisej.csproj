@@ -52,17 +52,47 @@
     <Compile Include="CheckedListBoxTest.Designer.cs">
       <DependentUpon>CheckedListBoxTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboBoxTest1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComboBoxTest1.Designer.cs">
+      <DependentUpon>ComboBoxTest1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComboBoxTest2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ComboBoxTest2.Designer.cs">
       <DependentUpon>ComboBoxTest2.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridView.Designer.cs">
+      <DependentUpon>DataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FocusTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FocusTest.Designer.cs">
+      <DependentUpon>FocusTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupBox.Designer.cs">
+      <DependentUpon>GroupBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListBoxTest.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListBoxTest.Designer.cs">
       <DependentUpon>ListBoxTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxTest2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListBoxTest2.Designer.cs">
+      <DependentUpon>ListBoxTest2.cs</DependentUpon>
     </Compile>
     <Compile Include="ListViewVirtualModeTest.cs">
       <SubType>Form</SubType>
@@ -81,11 +111,26 @@
     <EmbeddedResource Include="CheckedListBoxTest.resx">
       <DependentUpon>CheckedListBoxTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ComboBoxTest1.resx">
+      <DependentUpon>ComboBoxTest1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComboBoxTest2.resx">
       <DependentUpon>ComboBoxTest2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataGridView.resx">
+      <DependentUpon>DataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FocusTest.resx">
+      <DependentUpon>FocusTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupBox.resx">
+      <DependentUpon>GroupBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListBoxTest.resx">
       <DependentUpon>ListBoxTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBoxTest2.resx">
+      <DependentUpon>ListBoxTest2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListViewVirtualModeTest.resx">
       <DependentUpon>ListViewVirtualModeTest.cs</DependentUpon>
@@ -101,6 +146,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -114,6 +160,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="lv_images\32x32\abiword_48.png" />
+    <Content Include="lv_images\32x32\bmp.png" />
+    <Content Include="lv_images\32x32\disks.png" />
+    <Content Include="lv_images\32x32\evolution.png" />
+    <None Include="Resources\abiword_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

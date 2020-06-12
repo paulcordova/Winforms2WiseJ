@@ -38,6 +38,16 @@ namespace Windows2Wisej
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //new ComboBoxTest1().Show();
+
+            ComboBoxTest1 newMDIChild = new ComboBoxTest1();
+            newMDIChild.StartPosition = FormStartPosition.CenterParent;
+            newMDIChild.ShowDialog();
+
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             //new ComboBoxTest2().Show();
@@ -56,6 +66,35 @@ namespace Windows2Wisej
             newMDIChild.StartPosition = FormStartPosition.CenterParent;
             newMDIChild.ShowDialog();
 
+        }
+
+        private void buttonGroupBox_Click(object sender, EventArgs e)
+        {
+            GroupBox newMDIChild = new GroupBox();
+            newMDIChild.StartPosition = FormStartPosition.CenterParent;
+            newMDIChild.ShowDialog();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            //new ListBoxTest2().Show();
+            ListBoxTest2 newMDIChild = new ListBoxTest2();
+            newMDIChild.StartPosition = FormStartPosition.CenterParent;
+            newMDIChild.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FocusTest newMDIChild = new FocusTest();
+            newMDIChild.StartPosition = FormStartPosition.CenterParent;
+            newMDIChild.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataGridView newMDIChild = new DataGridView();
+            newMDIChild.StartPosition = FormStartPosition.CenterParent;
+            newMDIChild.ShowDialog();
         }
     }
 }

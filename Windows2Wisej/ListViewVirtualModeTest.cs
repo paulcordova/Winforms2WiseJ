@@ -60,7 +60,7 @@ namespace Windows2Wisej
 
             view_cb = new ComboBox();
             view_cb.Location = new Point(lv.Right + 70, 10);
-            view_cb.Items.AddRange(new object[] { View.LargeIcon, View.SmallIcon, View.Tile, View.Details });
+            view_cb.Items.AddRange(new object[] { View.LargeIcon, View.SmallIcon, View.Tile, View.Details, View.List });
 
             view_cb.SelectedItem = lv.View;
             view_cb.SelectedIndexChanged += ViewCBSelectedIndexChanged;
@@ -91,7 +91,12 @@ namespace Windows2Wisej
                 lv.Columns.Clear();
             }
 
-            lv.View =  view;
+            // Tile view is don't supported in VirtualMode
+            if (view != View.Tile)
+            {
+                lv.View = view;
+            }
+           
         }
 
         void ListViewRetrieveItem(object o, RetrieveVirtualItemEventArgs args)
@@ -119,17 +124,18 @@ namespace Windows2Wisej
         void LoadListViewImages()
         {
             //Image img = global::Wisej.Web.UITests.Properties.Resources.abiword_48;
-            //lv.SmallImageList.Images.Add(img);
-            //lv.LargeImageList.Images.Add(img);
-            //img = global::Wisej.Web.UITests.Properties.Resources.bmp;
-            //lv.SmallImageList.Images.Add(img);
-            //lv.LargeImageList.Images.Add(img);
-            //img = global::Wisej.Web.UITests.Properties.Resources.disks;
-            //lv.SmallImageList.Images.Add(img);
-            //lv.LargeImageList.Images.Add(img);
-            //img = global::Wisej.Web.UITests.Properties.Resources.evolution;
-            //lv.SmallImageList.Images.Add(img);
-            //lv.LargeImageList.Images.Add(img);
+            Image img = global::Windows2Wisej.Properties.Resources.abiword_48;
+            lv.SmallImageList.Images.Add(img);
+            lv.LargeImageList.Images.Add(img);
+            img = global::Windows2Wisej.Properties.Resources.bmp;
+            lv.SmallImageList.Images.Add(img);
+            lv.LargeImageList.Images.Add(img);
+            img = global::Windows2Wisej.Properties.Resources.disks;
+            lv.SmallImageList.Images.Add(img);
+            lv.LargeImageList.Images.Add(img);
+            img = global::Windows2Wisej.Properties.Resources.evolution;
+            lv.SmallImageList.Images.Add(img);
+            lv.LargeImageList.Images.Add(img);
         }
     }
 }
