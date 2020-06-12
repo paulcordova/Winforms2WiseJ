@@ -96,5 +96,19 @@ namespace Windows2Wisej
             newMDIChild.StartPosition = FormStartPosition.CenterParent;
             newMDIChild.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataGridView2 newMDIChild = new DataGridView2();
+            newMDIChild.StartPosition = FormStartPosition.CenterParent;
+            newMDIChild.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PropertyGridTest validationPropGrid = new PropertyGridTest();
+            validationPropGrid.StartPosition = FormStartPosition.CenterParent;
+            validationPropGrid.Show();
+        }
     }
 }

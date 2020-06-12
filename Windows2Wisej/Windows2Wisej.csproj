@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Windows2Wisej</RootNamespace>
     <AssemblyName>Windows2Wisej</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,6 +53,7 @@
     <Compile Include="CheckedListBoxTest.Designer.cs">
       <DependentUpon>CheckedListBoxTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClassesPropertyGrid\PropertyGridSimpleDemoClass.cs" />
     <Compile Include="ComboBoxTest1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +71,12 @@
     </Compile>
     <Compile Include="DataGridView.Designer.cs">
       <DependentUpon>DataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridView2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridView2.Designer.cs">
+      <DependentUpon>DataGridView2.cs</DependentUpon>
     </Compile>
     <Compile Include="FocusTest.cs">
       <SubType>Form</SubType>
@@ -108,6 +116,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyGridTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertyGridTest.Designer.cs">
+      <DependentUpon>PropertyGridTest.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CheckedListBoxTest.resx">
       <DependentUpon>CheckedListBoxTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataGridView.resx">
       <DependentUpon>DataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridView2.resx">
+      <DependentUpon>DataGridView2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FocusTest.resx">
       <DependentUpon>FocusTest.cs</DependentUpon>
@@ -148,6 +165,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PropertyGridTest.resx">
+      <DependentUpon>PropertyGridTest.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
