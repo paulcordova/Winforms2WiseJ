@@ -21,7 +21,11 @@ namespace Windows2Wisej.Views.Contacts
             LoadDataCountries();
             LoadDataProvinces();
             LoadDataCities();
-            LoadDataContactType();                        
+            LoadDataContactType();
+            LoadDataEmailType();
+            LoadDataPhoneType();
+           // LoadDataClientEmail();
+           // LoadDataClientPhones();
         }
 
 
@@ -32,7 +36,6 @@ namespace Windows2Wisej.Views.Contacts
             {
                 string sCountryID = cb.SelectedValue.ToString();
                 FilterDataProvinces(sCountryID);
-                
             }
         }
 
@@ -85,8 +88,61 @@ namespace Windows2Wisej.Views.Contacts
             cbContactType.DataSource = lstContactsTypesBindingSource;
         }
 
+        private void LoadDataEmailType()
+        {
+            lst_EmailAddressTypesTableAdapter.Fill(dsContacts.lst_EmailAddressTypes);
+        }
 
-        private void FilterDataProvinces(string sCountryID = null )
+        private void LoadDataPhoneType()
+        {
+            lst_PhoneNumbersCategoriesTableAdapter.Fill(dsContacts.lst_PhoneNumbersCategories);
+        }
+
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            GetSelectedContact();
+
+        }
+
+        private void GetSelectedContact()
+        {
+            int pContactID = 0;
+                        
+            DataRowView drw = (DataRowView)contactsBindingSource.Current;
+            Model.dsContacts.ContactsRow crw;
+            
+            if (drw != null)
+            {
+                crw = (Model.dsContacts.ContactsRow)drw.Row;
+
+                pContactID = (int)drw.Row.ItemArray[0];
+                pContactID = crw.ContactID;
+                LoadDataClientEmail(pContactID);
+                LoadDataClientPhones(pContactID);
+            }
+        }
+
+        private void GetSelectedContactTypedDatarow()
+        {
+            int pContactID = 0;
+            Model.dsContacts.ContactsRow crw;
+
+            //crw = (Model.dsContacts.ContactsRow)dr
+        }
+
+        private void LoadDataClientEmail(int pContactID)
+        {
+           
+            this.contacts_EmailAddressesTableAdapter.FillBy(dsContacts.Contacts_EmailAddresses, pContactID);
+        }
+
+        private void LoadDataClientPhones(int pContactID = 0)
+        {
+            this.contacts_PhoneNumbersTableAdapter.FillBy(dsContacts.Contacts_PhoneNumbers, pContactID);
+        }
+
+        private void FilterDataProvinces(string sCountryID = null)
         {
             if (sCountryID != null)
             {
@@ -130,6 +186,12 @@ namespace Windows2Wisej.Views.Contacts
                 this.contactsBindingSource.EndEdit();
                 this.contactsTableAdapter.Update(this.dsContacts.Contacts);
 
+                this.contacts_EmailAddressesBindingSource.EndEdit();
+                this.contacts_EmailAddressesTableAdapter.Update(this.dsContacts.Contacts_EmailAddresses);
+
+                this.contacts_PhoneNumbersBindingSource.EndEdit();
+                this.contacts_PhoneNumbersTableAdapter.Update(this.dsContacts.Contacts_PhoneNumbers);
+           
                 //AlertBox.Show("Data updated...");
             }
             catch (Exception ex)

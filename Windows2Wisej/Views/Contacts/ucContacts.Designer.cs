@@ -39,6 +39,26 @@ namespace Windows2Wisej.Views.Contacts
             this.contactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsContacts = new Windows2Wisej.Model.dsContacts();
             this.pnlData = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.contacts_EmailAddressesDataGridView = new System.Windows.Forms.DataGridView();
+            this.contactEmailIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailAddressTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailAddressTypeID = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.lstEmailAddressTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contacts_EmailAddressesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.contacts_PhoneNumbersDataGridView = new System.Windows.Forms.DataGridView();
+            this.phoneNumberIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberExtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberCategoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumberCategoryID2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.lstPhoneNumbersCategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contacts_PhoneNumbersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnRefresh = new System.Windows.Forms.Button();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -72,11 +92,25 @@ namespace Windows2Wisej.Views.Contacts
             this.lst_ProvincesTableAdapter = new Windows2Wisej.Model.dsContactsTableAdapters.lst_ProvincesTableAdapter();
             this.lst_CountriesTableAdapter = new Windows2Wisej.Model.dsContactsTableAdapters.lst_CountriesTableAdapter();
             this.lst_Contacts_TypesTableAdapter = new Windows2Wisej.Model.dsContactsTableAdapters.lst_Contacts_TypesTableAdapter();
+            this.contacts_EmailAddressesTableAdapter = new Windows2Wisej.Model.dsContactsTableAdapters.Contacts_EmailAddressesTableAdapter();
+            this.tableAdapterManager = new Windows2Wisej.Model.dsContactsTableAdapters.TableAdapterManager();
+            this.contacts_PhoneNumbersTableAdapter = new Windows2Wisej.Model.dsContactsTableAdapters.Contacts_PhoneNumbersTableAdapter();
+            this.lst_EmailAddressTypesTableAdapter = new Windows2Wisej.Model.dsContactsTableAdapters.lst_EmailAddressTypesTableAdapter();
+            this.lst_PhoneNumbersCategoriesTableAdapter = new Windows2Wisej.Model.dsContactsTableAdapters.lst_PhoneNumbersCategoriesTableAdapter();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsContacts)).BeginInit();
             this.pnlData.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_EmailAddressesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lstEmailAddressTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_EmailAddressesBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_PhoneNumbersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lstPhoneNumbersCategoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_PhoneNumbersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstContactsTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstCountriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstProvincesBindingSource)).BeginInit();
@@ -103,6 +137,7 @@ namespace Windows2Wisej.Views.Contacts
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(305, 429);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // colContactid
             // 
@@ -138,6 +173,7 @@ namespace Windows2Wisej.Views.Contacts
             // 
             // pnlData
             // 
+            this.pnlData.Controls.Add(this.tabControl1);
             this.pnlData.Controls.Add(this.btnRefresh);
             this.pnlData.Controls.Add(this.txtNotes);
             this.pnlData.Controls.Add(this.btnDelete);
@@ -165,8 +201,179 @@ namespace Windows2Wisej.Views.Contacts
             this.pnlData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlData.Location = new System.Drawing.Point(305, 0);
             this.pnlData.Name = "pnlData";
-            this.pnlData.Size = new System.Drawing.Size(644, 553);
+            this.pnlData.Size = new System.Drawing.Size(787, 553);
             this.pnlData.TabIndex = 1;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(308, 28);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(447, 283);
+            this.tabControl1.TabIndex = 26;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.contacts_EmailAddressesDataGridView);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(439, 257);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Emails";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // contacts_EmailAddressesDataGridView
+            // 
+            this.contacts_EmailAddressesDataGridView.AutoGenerateColumns = false;
+            this.contacts_EmailAddressesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contacts_EmailAddressesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.contactEmailIdDataGridViewTextBoxColumn,
+            this.contactIdDataGridViewTextBoxColumn1,
+            this.emailAddressDataGridViewTextBoxColumn,
+            this.emailAddressTypeIDDataGridViewTextBoxColumn,
+            this.EmailAddressTypeID});
+            this.contacts_EmailAddressesDataGridView.DataSource = this.contacts_EmailAddressesBindingSource;
+            this.contacts_EmailAddressesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contacts_EmailAddressesDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.contacts_EmailAddressesDataGridView.Name = "contacts_EmailAddressesDataGridView";
+            this.contacts_EmailAddressesDataGridView.Size = new System.Drawing.Size(433, 251);
+            this.contacts_EmailAddressesDataGridView.TabIndex = 0;
+            // 
+            // contactEmailIdDataGridViewTextBoxColumn
+            // 
+            this.contactEmailIdDataGridViewTextBoxColumn.DataPropertyName = "ContactEmailId";
+            this.contactEmailIdDataGridViewTextBoxColumn.HeaderText = "ContactEmailId";
+            this.contactEmailIdDataGridViewTextBoxColumn.Name = "contactEmailIdDataGridViewTextBoxColumn";
+            this.contactEmailIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contactIdDataGridViewTextBoxColumn1
+            // 
+            this.contactIdDataGridViewTextBoxColumn1.DataPropertyName = "ContactId";
+            this.contactIdDataGridViewTextBoxColumn1.HeaderText = "ContactId";
+            this.contactIdDataGridViewTextBoxColumn1.Name = "contactIdDataGridViewTextBoxColumn1";
+            this.contactIdDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // emailAddressDataGridViewTextBoxColumn
+            // 
+            this.emailAddressDataGridViewTextBoxColumn.DataPropertyName = "EmailAddress";
+            this.emailAddressDataGridViewTextBoxColumn.HeaderText = "EmailAddress";
+            this.emailAddressDataGridViewTextBoxColumn.Name = "emailAddressDataGridViewTextBoxColumn";
+            // 
+            // emailAddressTypeIDDataGridViewTextBoxColumn
+            // 
+            this.emailAddressTypeIDDataGridViewTextBoxColumn.DataPropertyName = "EmailAddressTypeID";
+            this.emailAddressTypeIDDataGridViewTextBoxColumn.HeaderText = "EmailAddressTypeID";
+            this.emailAddressTypeIDDataGridViewTextBoxColumn.Name = "emailAddressTypeIDDataGridViewTextBoxColumn";
+            this.emailAddressTypeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // EmailAddressTypeID
+            // 
+            this.EmailAddressTypeID.DataPropertyName = "EmailAddressTypeID";
+            this.EmailAddressTypeID.DataSource = this.lstEmailAddressTypesBindingSource;
+            this.EmailAddressTypeID.DisplayMember = "EmailAddressType";
+            this.EmailAddressTypeID.HeaderText = "EmailAddressTypeID";
+            this.EmailAddressTypeID.Name = "EmailAddressTypeID";
+            this.EmailAddressTypeID.ValueMember = "EmailAddressTypeID";
+            // 
+            // lstEmailAddressTypesBindingSource
+            // 
+            this.lstEmailAddressTypesBindingSource.DataMember = "lst_EmailAddressTypes";
+            this.lstEmailAddressTypesBindingSource.DataSource = this.dsContacts;
+            // 
+            // contacts_EmailAddressesBindingSource
+            // 
+            this.contacts_EmailAddressesBindingSource.AllowNew = true;
+            this.contacts_EmailAddressesBindingSource.DataMember = "ContactsContacts_EmailAddresses";
+            this.contacts_EmailAddressesBindingSource.DataSource = this.contactsBindingSource;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.contacts_PhoneNumbersDataGridView);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(439, 257);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Phones";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // contacts_PhoneNumbersDataGridView
+            // 
+            this.contacts_PhoneNumbersDataGridView.AutoGenerateColumns = false;
+            this.contacts_PhoneNumbersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contacts_PhoneNumbersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.phoneNumberIDDataGridViewTextBoxColumn,
+            this.contactIDDataGridViewTextBoxColumn,
+            this.phoneNumberDataGridViewTextBoxColumn,
+            this.phoneNumberExtDataGridViewTextBoxColumn,
+            this.phoneNumberCategoryIDDataGridViewTextBoxColumn,
+            this.PhoneNumberCategoryID2});
+            this.contacts_PhoneNumbersDataGridView.DataSource = this.contacts_PhoneNumbersBindingSource;
+            this.contacts_PhoneNumbersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contacts_PhoneNumbersDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.contacts_PhoneNumbersDataGridView.Name = "contacts_PhoneNumbersDataGridView";
+            this.contacts_PhoneNumbersDataGridView.Size = new System.Drawing.Size(433, 251);
+            this.contacts_PhoneNumbersDataGridView.TabIndex = 0;
+            // 
+            // phoneNumberIDDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberIDDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumberID";
+            this.phoneNumberIDDataGridViewTextBoxColumn.HeaderText = "PhoneNumberID";
+            this.phoneNumberIDDataGridViewTextBoxColumn.Name = "phoneNumberIDDataGridViewTextBoxColumn";
+            this.phoneNumberIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contactIDDataGridViewTextBoxColumn
+            // 
+            this.contactIDDataGridViewTextBoxColumn.DataPropertyName = "ContactID";
+            this.contactIDDataGridViewTextBoxColumn.HeaderText = "ContactID";
+            this.contactIDDataGridViewTextBoxColumn.Name = "contactIDDataGridViewTextBoxColumn";
+            this.contactIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            // 
+            // phoneNumberExtDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberExtDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumberExt";
+            this.phoneNumberExtDataGridViewTextBoxColumn.HeaderText = "PhoneNumberExt";
+            this.phoneNumberExtDataGridViewTextBoxColumn.Name = "phoneNumberExtDataGridViewTextBoxColumn";
+            // 
+            // phoneNumberCategoryIDDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberCategoryIDDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumberCategoryID";
+            this.phoneNumberCategoryIDDataGridViewTextBoxColumn.HeaderText = "PhoneNumberCategoryID";
+            this.phoneNumberCategoryIDDataGridViewTextBoxColumn.Name = "phoneNumberCategoryIDDataGridViewTextBoxColumn";
+            this.phoneNumberCategoryIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // PhoneNumberCategoryID2
+            // 
+            this.PhoneNumberCategoryID2.DataPropertyName = "PhoneNumberCategoryID";
+            this.PhoneNumberCategoryID2.DataSource = this.lstPhoneNumbersCategoriesBindingSource;
+            this.PhoneNumberCategoryID2.DisplayMember = "PhoneNumberCategory";
+            this.PhoneNumberCategoryID2.HeaderText = "PhoneNumberCategoryID";
+            this.PhoneNumberCategoryID2.Name = "PhoneNumberCategoryID2";
+            this.PhoneNumberCategoryID2.ValueMember = "PhoneNumberCategoryID";
+            // 
+            // lstPhoneNumbersCategoriesBindingSource
+            // 
+            this.lstPhoneNumbersCategoriesBindingSource.DataMember = "lst_PhoneNumbersCategories";
+            this.lstPhoneNumbersCategoriesBindingSource.DataSource = this.dsContacts;
+            // 
+            // contacts_PhoneNumbersBindingSource
+            // 
+            this.contacts_PhoneNumbersBindingSource.AllowNew = true;
+            this.contacts_PhoneNumbersBindingSource.DataMember = "ContactsContacts_PhoneNumbers";
+            this.contacts_PhoneNumbersBindingSource.DataSource = this.contactsBindingSource;
             // 
             // btnRefresh
             // 
@@ -232,9 +439,10 @@ namespace Windows2Wisej.Views.Contacts
             // 
             this.dataBirthDay.Checked = false;
             this.dataBirthDay.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.contactsBindingSource, "DOB", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "D"));
+            this.dataBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataBirthDay.Location = new System.Drawing.Point(140, 245);
             this.dataBirthDay.Name = "dataBirthDay";
-            this.dataBirthDay.Size = new System.Drawing.Size(200, 20);
+            this.dataBirthDay.Size = new System.Drawing.Size(145, 20);
             this.dataBirthDay.TabIndex = 18;
             this.dataBirthDay.Value = new System.DateTime(2020, 6, 11, 17, 21, 45, 279);
             // 
@@ -430,12 +638,43 @@ namespace Windows2Wisej.Views.Contacts
             // 
             this.lst_Contacts_TypesTableAdapter.ClearBeforeFill = true;
             // 
+            // contacts_EmailAddressesTableAdapter
+            // 
+            this.contacts_EmailAddressesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Contacts_EmailAddressesTableAdapter = this.contacts_EmailAddressesTableAdapter;
+            this.tableAdapterManager.Contacts_PhoneNumbersTableAdapter = this.contacts_PhoneNumbersTableAdapter;
+            this.tableAdapterManager.ContactsTableAdapter = this.contactsTableAdapter;
+            this.tableAdapterManager.lst_CitiesTableAdapter = this.lst_CitiesTableAdapter;
+            this.tableAdapterManager.lst_Contacts_TypesTableAdapter = this.lst_Contacts_TypesTableAdapter;
+            this.tableAdapterManager.lst_CountriesTableAdapter = this.lst_CountriesTableAdapter;
+            this.tableAdapterManager.lst_EmailAddressTypesTableAdapter = null;
+            this.tableAdapterManager.lst_PhoneNumbersCategoriesTableAdapter = null;
+            this.tableAdapterManager.lst_ProvincesTableAdapter = this.lst_ProvincesTableAdapter;
+            this.tableAdapterManager.lst_SalutationsTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Windows2Wisej.Model.dsContactsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // contacts_PhoneNumbersTableAdapter
+            // 
+            this.contacts_PhoneNumbersTableAdapter.ClearBeforeFill = true;
+            // 
+            // lst_EmailAddressTypesTableAdapter
+            // 
+            this.lst_EmailAddressTypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // lst_PhoneNumbersCategoriesTableAdapter
+            // 
+            this.lst_PhoneNumbersCategoriesTableAdapter.ClearBeforeFill = true;
+            // 
             // ucContacts
             // 
             this.Controls.Add(this.pnlData);
             this.Controls.Add(this.pnlSearch);
             this.Name = "ucContacts";
-            this.Size = new System.Drawing.Size(949, 553);
+            this.Size = new System.Drawing.Size(1092, 553);
             this.Load += new System.EventHandler(this.ucContacts_Load);
             this.pnlSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -443,6 +682,15 @@ namespace Windows2Wisej.Views.Contacts
             ((System.ComponentModel.ISupportInitialize)(this.dsContacts)).EndInit();
             this.pnlData.ResumeLayout(false);
             this.pnlData.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_EmailAddressesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lstEmailAddressTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_EmailAddressesBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_PhoneNumbersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lstPhoneNumbersCategoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contacts_PhoneNumbersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstContactsTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstCountriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstProvincesBindingSource)).EndInit();
@@ -494,5 +742,30 @@ namespace Windows2Wisej.Views.Contacts
         private Button btnDelete;
         private TextBox txtNotes;
         private Button btnRefresh;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private BindingSource contacts_EmailAddressesBindingSource;
+        private Model.dsContactsTableAdapters.Contacts_EmailAddressesTableAdapter contacts_EmailAddressesTableAdapter;
+        private Model.dsContactsTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView contacts_EmailAddressesDataGridView;
+        private System.Windows.Forms.DataGridView contacts_PhoneNumbersDataGridView;
+        private BindingSource contacts_PhoneNumbersBindingSource;
+        private Model.dsContactsTableAdapters.Contacts_PhoneNumbersTableAdapter contacts_PhoneNumbersTableAdapter;
+        private BindingSource lstEmailAddressTypesBindingSource;
+        private Model.dsContactsTableAdapters.lst_EmailAddressTypesTableAdapter lst_EmailAddressTypesTableAdapter;
+        private BindingSource lstPhoneNumbersCategoriesBindingSource;
+        private Model.dsContactsTableAdapters.lst_PhoneNumbersCategoriesTableAdapter lst_PhoneNumbersCategoriesTableAdapter;
+        private DataGridViewTextBoxColumn contactEmailIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn contactIdDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn emailAddressDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn emailAddressTypeIDDataGridViewTextBoxColumn;
+        private DataGridViewComboBoxColumn EmailAddressTypeID;
+        private DataGridViewTextBoxColumn phoneNumberIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn contactIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn phoneNumberExtDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn phoneNumberCategoryIDDataGridViewTextBoxColumn;
+        private DataGridViewComboBoxColumn PhoneNumberCategoryID2;
     }
 }
