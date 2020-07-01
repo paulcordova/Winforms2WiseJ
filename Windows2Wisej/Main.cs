@@ -124,5 +124,20 @@ namespace Windows2Wisej
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
+
+        private void btnDataBinding_Click(object sender, EventArgs e)
+        {
+
+            DataBindingTest frm = new DataBindingTest();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            DataGridView3 newMDIChild = new DataGridView3();
+            newMDIChild.StartPosition = FormStartPosition.CenterParent;
+            newMDIChild.ShowDialog();
+        }
     }
 }

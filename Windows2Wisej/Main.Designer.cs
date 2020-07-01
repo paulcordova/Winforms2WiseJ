@@ -42,6 +42,8 @@
             this.btnPopUp = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.btnDataBinding = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button17
@@ -183,11 +185,33 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // btnDataBinding
+            // 
+            this.btnDataBinding.Location = new System.Drawing.Point(41, 162);
+            this.btnDataBinding.Name = "btnDataBinding";
+            this.btnDataBinding.Size = new System.Drawing.Size(134, 43);
+            this.btnDataBinding.TabIndex = 14;
+            this.btnDataBinding.Text = "DataBinding";
+            this.btnDataBinding.UseVisualStyleBackColor = true;
+            this.btnDataBinding.Click += new System.EventHandler(this.btnDataBinding_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(680, 243);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(159, 42);
+            this.button9.TabIndex = 15;
+            this.button9.Text = "DatagridView 3";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 534);
+            this.ClientSize = new System.Drawing.Size(877, 534);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.btnDataBinding);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btnPopUp);
@@ -225,5 +249,7 @@
         private System.Windows.Forms.Button btnPopUp;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnDataBinding;
+        private System.Windows.Forms.Button button9;
     }
 }

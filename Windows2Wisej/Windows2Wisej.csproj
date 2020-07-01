@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Windows2Wisej.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -80,6 +83,12 @@
     <Compile Include="controls\ucMasterDetail.Designer.cs">
       <DependentUpon>ucMasterDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBindingTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataBindingTest.Designer.cs">
+      <DependentUpon>DataBindingTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataGridView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +100,12 @@
     </Compile>
     <Compile Include="DataGridView2.Designer.cs">
       <DependentUpon>DataGridView2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridView3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridView3.Designer.cs">
+      <DependentUpon>DataGridView3.cs</DependentUpon>
     </Compile>
     <Compile Include="FocusTest.cs">
       <SubType>Form</SubType>
@@ -198,11 +213,17 @@
     <EmbeddedResource Include="controls\ucMasterDetail.resx">
       <DependentUpon>ucMasterDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataBindingTest.resx">
+      <DependentUpon>DataBindingTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataGridView.resx">
       <DependentUpon>DataGridView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataGridView2.resx">
       <DependentUpon>DataGridView2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridView3.resx">
+      <DependentUpon>DataGridView3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FocusTest.resx">
       <DependentUpon>FocusTest.cs</DependentUpon>
@@ -288,10 +309,18 @@
     <Content Include="Images\stone.bmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="lv_images\32x32\abiword_48.png" />
-    <Content Include="lv_images\32x32\bmp.png" />
-    <Content Include="lv_images\32x32\disks.png" />
-    <Content Include="lv_images\32x32\evolution.png" />
+    <Content Include="lv_images\32x32\abiword_48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lv_images\32x32\bmp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lv_images\32x32\disks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lv_images\32x32\evolution.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\abiword_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
